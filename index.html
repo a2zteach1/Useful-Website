@@ -4,130 +4,262 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Useful Websites</title>
-    <!-- Favicon / Browser Tab Icon -->
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* CSS Variables for Colors */
+        :root {
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --card-bg: rgba(255, 255, 255, 0.92);
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #fceabb, #f8b500);
-            color: #333;
-            text-align: center;
-            overflow-y: scroll;
+            padding: 0;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Animated Colorful Background */
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Main Container - Glassmorphism Effect */
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        /* Typography */
         h1 {
-            color: rgb(243, 6, 6);
-            padding: 10px;
+            color: #d63031;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        h2 {
-            color: #0a33eb;
-            padding: 5px;
-        }
+
         h4 {
-            color: rgb(99, 81, 81);
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 30px;
+            font-size: 1rem;
         }
+
+        h4 a {
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        h4 a:hover {
+            color: #d63031;
+        }
+
+        h2 {
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        /* Grid Layout for Buttons */
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        /* Modern Button Styling */
         button {
-            background-color: green;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
             color: white;
-            font-size: 15px;
-            padding: 15px 10px;
-            margin: 5px;
-            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 12px 15px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.2);
+            width: 100%;
         }
+
         button:hover {
-            background-color: rgb(27, 7, 212);
-            padding: 10px;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+            background: linear-gradient(135deg, #5f27cd, #341f97);
         }
+
+        /* Unique Colors for Different Sections */
+        .section-google button { background: linear-gradient(135deg, #ff7675, #d63031); box-shadow: 0 4px 10px rgba(214, 48, 49, 0.2); }
+        .section-google button:hover { background: linear-gradient(135deg, #d63031, #b33939); }
+
+        .section-share button { background: linear-gradient(135deg, #55efc4, #00b894); box-shadow: 0 4px 10px rgba(0, 184, 148, 0.2); color: #000; }
+        .section-share button:hover { background: linear-gradient(135deg, #00b894, #01997b); color: white; }
+
+        .section-bank button { background: linear-gradient(135deg, #74b9ff, #0984e3); box-shadow: 0 4px 10px rgba(9, 132, 227, 0.2); }
+        .section-bank button:hover { background: linear-gradient(135deg, #0984e3, #0652dd); }
+
+        .section-ai button { background: linear-gradient(135deg, #fd79a8, #e84393); box-shadow: 0 4px 10px rgba(232, 67, 147, 0.2); }
+        .section-ai button:hover { background: linear-gradient(135deg, #e84393, #b71540); }
+
+        .section-code button { background: linear-gradient(135deg, #636e72, #2d3436); box-shadow: 0 4px 10px rgba(45, 52, 54, 0.2); }
+        .section-code button:hover { background: linear-gradient(135deg, #2d3436, #000000); }
+
+        .section-video button { background: linear-gradient(135deg, #ffeaa7, #fdcb6e); box-shadow: 0 4px 10px rgba(253, 203, 110, 0.2); color: #000; }
+        .section-video button:hover { background: linear-gradient(135deg, #fdcb6e, #e1b12c); }
+
+        .section-a2z button { background: linear-gradient(135deg, #00cec9, #00b894); box-shadow: 0 4px 10px rgba(0, 206, 201, 0.2); }
+        .section-a2z button:hover { background: linear-gradient(135deg, #00b894, #01997b); }
+
+        /* Footer */
         footer {
-            color: rgb(22, 56, 3);
-            padding: 5px;
-            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .btn-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Useful Websites</h1>
 
-    <h4>
-        Website Made By: A2Z Teach (Rupak Kushwaha) —
-        <a href="https://www.youtube.com/@a2z-teach0" target="_blank">YouTube</a>
-    </h4>
+    <div class="container">
+        <h1>Useful Websites</h1>
 
-    <h2>Social Media</h2>
-    <button onclick="window.open('https://www.facebook.com', '_blank')">Facebook</button>
-    <button onclick="window.open('https://www.instagram.com', '_blank')">Instagram</button>
-    <button onclick="window.open('https://www.tiktok.com', '_blank')">TikTok</button>
-    <button onclick="window.open('https://www.twitter.com', '_blank')">Twitter</button>
-    <button onclick="window.open('https://www.pinterest.com', '_blank')">Pinterest</button>
-    <br>
-    <button onclick="window.open('https://www.snapchat.com', '_blank')">Snapchat</button>
-    <button onclick="window.open('https://web.whatsapp.com', '_blank')">WhatsApp</button>
-    <button onclick="window.open('https://www.messenger.com', '_blank')">Messenger</button>
-    <button onclick="window.open('https://web.telegram.org', '_blank')">Telegram</button>
-    <button onclick="window.open('https://www.linkedin.com', '_blank')">LinkedIn</button>
+        <h4>
+            Website Made By: A2Z Teach (Rupak Kushwaha) —
+            <a href="https://www.youtube.com/@a2z-teach0" target="_blank">YouTube</a>
+        </h4>
 
-    <h2>Google Related</h2>
-    <button onclick="window.open('https://www.google.com', '_blank')">Google</button>
-    <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
-    <button onclick="window.open('https://drive.google.com', '_blank')">Drive</button>
-    <button onclick="window.open('https://mail.google.com', '_blank')">Gmail</button>
-    <button onclick="window.open('https://photos.google.com', '_blank')">Photos</button>
-    <button onclick="window.open('https://maps.google.com', '_blank')">Maps</button>
-    <br>
-    <button onclick="window.open('https://translate.google.com', '_blank')">Translate</button>
-    <button onclick="window.open('https://docs.google.com', '_blank')">Google Docs</button>
-    <button onclick="window.open('https://sheets.google.com', '_blank')">Google Sheets</button>
-    <button onclick="window.open('https://slides.google.com', '_blank')">Google Slides</button>
+        <h2>Social Media</h2>
+        <div class="btn-grid">
+            <button onclick="window.open('https://www.facebook.com', '_blank')">Facebook</button>
+            <button onclick="window.open('https://www.instagram.com', '_blank')">Instagram</button>
+            <button onclick="window.open('https://www.tiktok.com', '_blank')">TikTok</button>
+            <button onclick="window.open('https://www.twitter.com', '_blank')">Twitter</button>
+            <button onclick="window.open('https://www.pinterest.com', '_blank')">Pinterest</button>
+            <button onclick="window.open('https://www.snapchat.com', '_blank')">Snapchat</button>
+            <button onclick="window.open('https://web.whatsapp.com', '_blank')">WhatsApp</button>
+            <button onclick="window.open('https://www.messenger.com', '_blank')">Messenger</button>
+            <button onclick="window.open('https://web.telegram.org', '_blank')">Telegram</button>
+            <button onclick="window.open('https://www.linkedin.com', '_blank')">LinkedIn</button>
+        </div>
 
-    <h2>Share Related</h2>
-    <button onclick="window.open('https://www.nepalstock.com', '_blank')">Nepal Stock</button>
-    <button onclick="window.open('https://meroshare.cdsc.com.np', '_blank')">Meroshare</button>
-    <button onclick="window.open('https://iporesult.cdsc.com.np', '_blank')">Share Result</button>
-    <button onclick="window.open('https://merolagani.com', '_blank')">Merolagani</button>
+        <h2>Google Related</h2>
+        <div class="btn-grid section-google">
+            <button onclick="window.open('https://www.google.com', '_blank')">Google</button>
+            <button onclick="window.open('https://www.youtube.com', '_blank')">YouTube</button>
+            <button onclick="window.open('https://drive.google.com', '_blank')">Drive</button>
+            <button onclick="window.open('https://mail.google.com', '_blank')">Gmail</button>
+            <button onclick="window.open('https://photos.google.com', '_blank')">Photos</button>
+            <button onclick="window.open('https://maps.google.com', '_blank')">Maps</button>
+            <button onclick="window.open('https://translate.google.com', '_blank')">Translate</button>
+            <button onclick="window.open('https://docs.google.com', '_blank')">Google Docs</button>
+            <button onclick="window.open('https://sheets.google.com', '_blank')">Google Sheets</button>
+            <button onclick="window.open('https://slides.google.com', '_blank')">Google Slides</button>
+        </div>
 
-    <h2>Banking Related</h2>
-    <button onclick="window.open('https://web.khalti.com', '_blank')">Khalti</button>
-    <button onclick="window.open('https://esewa.com.np', '_blank')">Esewa</button>
-    <button onclick="window.open('https://login.connectips.com', '_blank')">Connect IPS</button>
-    <button onclick="window.open('https://prabhupay.com/Customer', '_blank')">Prabhupay</button>
+        <h2>Share Related</h2>
+        <div class="btn-grid section-share">
+            <button onclick="window.open('https://www.nepalstock.com', '_blank')">Nepal Stock</button>
+            <button onclick="window.open('https://meroshare.cdsc.com.np', '_blank')">Meroshare</button>
+            <button onclick="window.open('https://iporesult.cdsc.com.np', '_blank')">Share Result</button>
+            <button onclick="window.open('https://merolagani.com', '_blank')">Merolagani</button>
+        </div>
 
-    <h2>AI Learning</h2>
-    <button onclick="window.open('https://chatgpt.com', '_blank')">ChatGPT</button>
-    <button onclick="window.open('https://aistudio.google.com', '_blank')">Google AI Studio</button>
-    <button onclick="window.open('https://copilot.microsoft.com', '_blank')">Copilot</button>
-    <button onclick="window.open('https://gemini.google.com', '_blank')">Gemini</button>
-    <button onclick="window.open('https://claude.ai', '_blank')">Claude AI</button>
+        <h2>Banking Related</h2>
+        <div class="btn-grid section-bank">
+            <button onclick="window.open('https://web.khalti.com', '_blank')">Khalti</button>
+            <button onclick="window.open('https://esewa.com.np', '_blank')">Esewa</button>
+            <button onclick="window.open('https://login.connectips.com', '_blank')">Connect IPS</button>
+            <button onclick="window.open('https://prabhupay.com/Customer', '_blank')">Prabhupay</button>
+        </div>
 
-    <h2>Coding Learning</h2>
-    <button onclick="window.open('https://github.com', '_blank')">GitHub</button>
-    <button onclick="window.open('https://www.webintoapp.com', '_blank')">Web Into App</button>
-    <button onclick="window.open('https://html.onlineviewer.net', '_blank')">HTML Reader</button>
-    <button onclick="window.open('https://dartpad.dev/', '_blank')">Dart Reader</button>    
-    <button onclick="window.open('https://vscode.dev', '_blank')">VS Code</button>
-    <button onclick="window.open('https://console.firebase.google.com/', '_blank')">Fire Base</button>
-    <button onclick="window.open('https://flutlab.io/', '_blank')">Flutter Lab</button>
+        <h2>AI Learning</h2>
+        <div class="btn-grid section-ai">
+            <button onclick="window.open('https://chatgpt.com', '_blank')">ChatGPT</button>
+            <button onclick="window.open('https://aistudio.google.com', '_blank')">Google AI Studio</button>
+            <button onclick="window.open('https://copilot.microsoft.com', '_blank')">Copilot</button>
+            <button onclick="window.open('https://gemini.google.com', '_blank')">Gemini</button>
+            <button onclick="window.open('https://claude.ai', '_blank')">Claude AI</button>
+        </div>
 
-    <h2>Video Downloader</h2>
-    <button onclick="window.open('https://www.savethevideo.com', '_blank')">Youtube Downloader</button>
-    <button onclick="window.open('https://snapsave.app', '_blank')">Facebook Downloader</button>
-    <button onclick="window.open('https://ytmp3.as', '_blank')">YT to MP3</button>
-    <br>
-    <button onclick="window.open('https://snaptik.kim', '_blank')">TikTok Downloader</button>
-    <button onclick="window.open('https://hdhub4u.gd/', '_blank')">Movie Downloader</button>
+        <h2>Coding Learning</h2>
+        <div class="btn-grid section-code">
+            <button onclick="window.open('https://github.com', '_blank')">GitHub</button>
+            <button onclick="window.open('https://www.webintoapp.com', '_blank')">Web Into App</button>
+            <button onclick="window.open('https://html.onlineviewer.net', '_blank')">HTML Reader</button>
+            <button onclick="window.open('https://dartpad.dev/', '_blank')">Dart Reader</button>    
+            <button onclick="window.open('https://vscode.dev', '_blank')">VS Code</button>
+            <button onclick="window.open('https://console.firebase.google.com/', '_blank')">Fire Base</button>
+            <button onclick="window.open('https://flutlab.io/', '_blank')">Flutter Lab</button>
+        </div>
 
-    <h2>A2Z Teach Website</h2>
-    <button onclick="window.open('https://a2zteach1.github.io/Tic-Tac-Toe-Game/', '_blank')">Tic Tac Toe Game</button>
-    <button onclick="window.open('https://a2zteach1.github.io/Kids-Quiz-game/', '_blank')">Kids Quiz Game</button>
-    <button onclick="window.open('https://a2zteach1.github.io/Timer-App/', '_blank')">Timer</button>
-    <br>
-    <button onclick="window.open('https://a2zteach1.github.io/Alphabet-Matching-Game/', '_blank')">Alphabet Matching Game</button>
-    <button onclick="window.open('https://a2zteach1.github.io/User-Add-Timer-App/', '_blank')">User Add Time</button>
-    <button onclick="window.open('https://a2zteach1.github.io/ACCA-F3-Financial-Accounting-/', '_blank')">ACCA F3</button>
+        <h2>Video Downloader</h2>
+        <div class="btn-grid section-video">
+            <button onclick="window.open('https://www.savethevideo.com', '_blank')">Youtube Downloader</button>
+            <button onclick="window.open('https://snapsave.app', '_blank')">Facebook Downloader</button>
+            <button onclick="window.open('https://ytmp3.as', '_blank')">YT to MP3</button>
+            <button onclick="window.open('https://snaptik.kim', '_blank')">TikTok Downloader</button>
+            <button onclick="window.open('https://hdhub4u.gd/', '_blank')">Movie Downloader</button>
+        </div>
 
-    <footer>
-        <p>Copyright &copy; 2025 A2Z Teach (Rupak Kushwaha)</p>
-    </footer>
+        <h2>A2Z Teach Website</h2>
+        <div class="btn-grid section-a2z">
+            <button onclick="window.open('https://a2zteach1.github.io/Tic-Tac-Toe-Game/', '_blank')">Tic Tac Toe Game</button>
+            <button onclick="window.open('https://a2zteach1.github.io/Kids-Quiz-game/', '_blank')">Kids Quiz Game</button>
+            <button onclick="window.open('https://a2zteach1.github.io/Timer-App/', '_blank')">Timer</button>
+            <button onclick="window.open('https://a2zteach1.github.io/Alphabet-Matching-Game/', '_blank')">Alphabet Matching Game</button>
+            <button onclick="window.open('https://a2zteach1.github.io/User-Add-Timer-App/', '_blank')">User Add Time</button>
+            <button onclick="window.open('https://a2zteach1.github.io/ACCA-F3-Financial-Accounting-/', '_blank')">ACCA F3</button>
+        </div>
+
+        <footer>
+            <p>Copyright © 2025 A2Z Teach (Rupak Kushwaha)</p>
+        </footer>
+    </div>
+
 </body>
 </html>
