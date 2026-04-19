@@ -7,13 +7,14 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables for Colors */
+        /* CSS Variables for Colors and Settings */
         :root {
             --text-main: #2d3436;
             --text-muted: #636e72;
             --card-bg: rgba(255, 255, 255, 0.92);
         }
 
+        /* Basic Reset and Modern Font */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -51,7 +52,7 @@
             text-align: center;
         }
 
-        /* Typography */
+        /* Typography Styles */
         h1 {
             color: #d63031;
             font-size: 2.5rem;
@@ -89,16 +90,15 @@
             text-align: left;
         }
 
-        /* Grid Layout for Buttons */
+        /* Responsive Button Grid */
         .btn-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 15px;
         }
 
-        /* Modern Button Styling */
+        /* Base Button Styles */
         button {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
             color: white;
             font-family: 'Poppins', sans-serif;
             font-size: 0.95rem;
@@ -108,37 +108,93 @@
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
         }
 
         button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            /* Handle smaller padding on hover */
+            padding: 10px 18px;
+        }
+
+        /* Category Specific Colorful Gradients */
+        
+        /* Social Media - Blue/Purple */
+        .btn-grid button {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.2);
+        }
+        .btn-grid button:hover {
             background: linear-gradient(135deg, #5f27cd, #341f97);
         }
 
-        /* Unique Colors for Different Sections */
-        .section-google button { background: linear-gradient(135deg, #ff7675, #d63031); box-shadow: 0 4px 10px rgba(214, 48, 49, 0.2); }
-        .section-google button:hover { background: linear-gradient(135deg, #d63031, #b33939); }
+        /* Google Related - Red/Orange */
+        .section-google button {
+            background: linear-gradient(135deg, #ff7675, #d63031);
+            box-shadow: 0 4px 10px rgba(214, 48, 49, 0.2);
+        }
+        .section-google button:hover {
+            background: linear-gradient(135deg, #d63031, #b33939);
+        }
 
-        .section-share button { background: linear-gradient(135deg, #55efc4, #00b894); box-shadow: 0 4px 10px rgba(0, 184, 148, 0.2); color: #000; }
-        .section-share button:hover { background: linear-gradient(135deg, #00b894, #01997b); color: white; }
+        /* Share Related - Green */
+        .section-share button {
+            background: linear-gradient(135deg, #55efc4, #00b894);
+            box-shadow: 0 4px 10px rgba(0, 184, 148, 0.2);
+            color: #000;
+        }
+        .section-share button:hover {
+            background: linear-gradient(135deg, #00b894, #01997b);
+            color: white;
+        }
 
-        .section-bank button { background: linear-gradient(135deg, #74b9ff, #0984e3); box-shadow: 0 4px 10px rgba(9, 132, 227, 0.2); }
-        .section-bank button:hover { background: linear-gradient(135deg, #0984e3, #0652dd); }
+        /* Banking Related - Sky Blue */
+        .section-bank button {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            box-shadow: 0 4px 10px rgba(9, 132, 227, 0.2);
+        }
+        .section-bank button:hover {
+            background: linear-gradient(135deg, #0984e3, #0652dd);
+        }
 
-        .section-ai button { background: linear-gradient(135deg, #fd79a8, #e84393); box-shadow: 0 4px 10px rgba(232, 67, 147, 0.2); }
-        .section-ai button:hover { background: linear-gradient(135deg, #e84393, #b71540); }
+        /* AI Learning - Pink/Magenta */
+        .section-ai button {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            box-shadow: 0 4px 10px rgba(232, 67, 147, 0.2);
+        }
+        .section-ai button:hover {
+            background: linear-gradient(135deg, #e84393, #b71540);
+        }
 
-        .section-code button { background: linear-gradient(135deg, #636e72, #2d3436); box-shadow: 0 4px 10px rgba(45, 52, 54, 0.2); }
-        .section-code button:hover { background: linear-gradient(135deg, #2d3436, #000000); }
+        /* Coding Learning - Dark Grey/Black */
+        .section-code button {
+            background: linear-gradient(135deg, #636e72, #2d3436);
+            box-shadow: 0 4px 10px rgba(45, 52, 54, 0.2);
+        }
+        .section-code button:hover {
+            background: linear-gradient(135deg, #2d3436, #000000);
+        }
 
-        .section-video button { background: linear-gradient(135deg, #ffeaa7, #fdcb6e); box-shadow: 0 4px 10px rgba(253, 203, 110, 0.2); color: #000; }
-        .section-video button:hover { background: linear-gradient(135deg, #fdcb6e, #e1b12c); }
+        /* Video Downloader - Yellow/Gold */
+        .section-video button {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            box-shadow: 0 4px 10px rgba(253, 203, 110, 0.2);
+            color: #000;
+        }
+        .section-video button:hover {
+            background: linear-gradient(135deg, #fdcb6e, #e1b12c);
+        }
 
-        .section-a2z button { background: linear-gradient(135deg, #00cec9, #00b894); box-shadow: 0 4px 10px rgba(0, 206, 201, 0.2); }
-        .section-a2z button:hover { background: linear-gradient(135deg, #00b894, #01997b); }
+        /* A2Z Teach Website - Teal */
+        .section-a2z button {
+            background: linear-gradient(135deg, #00cec9, #00b894);
+            box-shadow: 0 4px 10px rgba(0, 206, 201, 0.2);
+        }
+        .section-a2z button:hover {
+            background: linear-gradient(135deg, #00b894, #01997b);
+        }
 
         /* Footer */
         footer {
@@ -149,7 +205,7 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile Responsiveness */
+        /* Mobile Responsiveness for the Grid */
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -169,9 +225,9 @@
         <h1>Useful Websites</h1>
 
         <h4>
-            Website Made By: A2Z Teach (Rupak Kushwaha) <br>
-            <a href="https://www.youtube.com/@a2z-teach0" target="_blank">YouTube</a>
-            <a href="https://a2zteach1.github.io/A2Z-Teach-Website/" target="_blank">Website</a>
+            Website Made By: A2Z Teach (Rupak Kushwaha) —
+            <a href="https://www.youtube.com/@a2z-teach0" target="_blank">YouTube</a> &
+            <a href="https://mywebsite.com" target="_blank">My Website</a>
         </h4>
 
         <h2>Social Media</h2>
